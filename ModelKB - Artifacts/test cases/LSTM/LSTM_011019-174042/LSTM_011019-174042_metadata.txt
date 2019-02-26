@@ -1,0 +1,11 @@
+model_name:LSTM_011019-174042
+framework:keras 2.2.2
+size:904.76 kilobytes
+epochs:10
+layersCount:9
+InputTensors:(None, 60, 1)
+OutputTensor:(None, 1)
+Optimizer:Adam
+LossFunction:mean_squared_error
+AccuracyValue:0.001669449081803005
+LossValue:0.004182783369432034

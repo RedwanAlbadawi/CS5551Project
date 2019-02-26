@@ -1,0 +1,11 @@
+model_name:FashionMnist_020119-172224
+framework:keras 2.2.4
+size:1244.224 kilobytes
+epochs:20
+layersCount:3
+InputTensors:(None, 28, 28)
+OutputTensor:(None, 10)
+Optimizer:Adam
+LossFunction:sparse_categorical_crossentropy
+AccuracyValue:0.978
+LossValue:0.061

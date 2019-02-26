@@ -1,0 +1,11 @@
+model_name:CNN011019-222647
+framework:keras 2.2.2
+size:9793.952 kilobytes
+epochs:7
+layersCount:7
+InputTensors:(None, 64, 64, 3)
+OutputTensor:(None, 1)
+Optimizer:Adam
+LossFunction:binary_crossentropy
+AccuracyValue:0.34375
+LossValue:0.7451262474060059
