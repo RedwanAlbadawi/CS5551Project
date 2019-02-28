@@ -1,0 +1,21 @@
+.primary-panel, .panel-body{
+  width:70%;
+  margin-left: 15%;
+  margin-right: 15%
+}
+
+.panel-heading {
+  margin-top:10px;
+  color: darkblue;
+  text-align: center;
+  padding: 25px;
+}
+
+form {
+  font-family: Verdana;
+}
+
+.form-group{
+  color: black;
+  font-weight: 10pt;
+}

@@ -1,0 +1,18 @@
+.header-bar {
+  background-color: #0063cc;
+  font-family: Verdana;
+}
+
+.nav-bar {
+  float: left;
+}
+
+.header-title {
+  float: right;
+  margin-top: -7.5em;
+}
+
+h1 {
+  font-size: 72px;
+  color: white;
+}
