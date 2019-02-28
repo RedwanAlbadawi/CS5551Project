@@ -1,18 +1,19 @@
-.header-bar {
-  background-color: #0063cc;
-  font-family: Verdana;
-}
-
-.nav-bar {
+.d-inline-block {
   float: left;
 }
 
-.header-title {
-  float: right;
-  margin-top: -7.5em;
+.navbar {
+  background-color:#007bff;
+  display: inline-block;
+  text-align: center;
+  width:100%;
+}
+
+.navbar-text {
+  color: white;
+  position: relative;
 }
 
 h1 {
-  font-size: 72px;
-  color: white;
+  font-size:72pt;
 }
