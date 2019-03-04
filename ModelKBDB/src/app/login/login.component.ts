@@ -12,9 +12,7 @@ export class LoginComponent implements OnInit {
   private password: string;
   alert = '';
 
-  constructor(private firebaseauth: AngularFireAuth) {
-
-  }
+  constructor(private firebaseauth: AngularFireAuth) {}
 
   loginEvent(value: any) {
     this.email = value.email.toString();
