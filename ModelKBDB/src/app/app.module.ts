@@ -12,6 +12,12 @@ import { ModeldbComponent } from './modeldb/modeldb.component';
 import { routing } from './app-routing.module';
 import { RouterModule } from '@angular/router';
 import { HeaderComponent } from './header/header.component';
+<<<<<<< HEAD
+import { FilterPipe } from './Search/filter.pipe';
+=======
+import {AuthService} from './auth/auth.service';
+import {AuthGuard} from './auth/auth.guard';
+>>>>>>> 5db6eae507240e8fc56700f57662f4547c9bbbb1
 
 // Initialize Firebase
 const firebaseConfig = {
@@ -29,7 +35,8 @@ const firebaseConfig = {
     LoginComponent,
     RegisterComponent,
     ModeldbComponent,
-    HeaderComponent
+    HeaderComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,
@@ -47,12 +54,21 @@ const firebaseConfig = {
       {
         path: 'modeldb',
         component: ModeldbComponent,
+        canActivate: [AuthGuard]
+      },
+      {
+        path: '',
+        component: LoginComponent
       }
     ]),
     AngularFireDatabaseModule,
     AngularFireModule.initializeApp(firebaseConfig),
   ],
-  providers: [AngularFireAuth],
+  providers: [
+    AngularFireAuth,
+    AuthGuard,
+    AuthService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
