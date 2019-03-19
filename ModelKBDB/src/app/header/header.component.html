@@ -1,8 +1,11 @@
 <nav class="navbar">
-  <a class="navbar-brand" href="#">
+  <a class="navbar-left" href="#">
     <img src="../../assets/kb_logo.png" width="150" height="150" class="d-inline-block align-top" alt="">
     <a class="navbar-text" href="#">
       <h1>ModelKB DB</h1>
+    </a>
+    <a class="navbar-right" href="#" *ngIf="(authService.user$ | async)?.uid">
+      <button class="btn btn-light" (click)="authService.logout()">Logout</button>
     </a>
   </a>
 </nav>

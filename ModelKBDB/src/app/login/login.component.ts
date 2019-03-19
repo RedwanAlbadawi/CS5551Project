@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {AngularFireAuth} from 'angularfire2/auth';
+import { AuthService } from '../auth/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -12,7 +12,7 @@ export class LoginComponent implements OnInit {
   private password: string;
   alert = '';
 
-  constructor(private firebaseauth: AngularFireAuth) {}
+  constructor(public authService: AuthService) {}
 
   loginEvent(value: any) {
     this.email = value.email.toString();
@@ -21,17 +21,8 @@ export class LoginComponent implements OnInit {
     console.log(this.password);
 
     if (this.email !== '' && this.password !== '') {
-      try {
-        this.firebaseauth.auth.signInWithEmailAndPassword(this.email, this.password).then(() => {
-          console.log('logged in');
-        }).catch(() => {
-          this.alert = 'Try again. Invalid Credentials';
-        });
-      } catch (e) {
-        console.error(e);
-      }
+      this.authService.login(this.email, this.password);
     }
-
   }
 
   ngOnInit() {
