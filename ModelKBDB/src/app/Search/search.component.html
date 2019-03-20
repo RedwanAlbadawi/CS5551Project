@@ -1,9 +1,0 @@
-<form id="filter">
-  <label>search:</label>
-  <input type="text" [(ngModel)]="term" />
-
-</form>
-<ul id="mongo_Data">
-  <li *ngFor="let mongo of mongos | filter:term">
-  </li>
-</ul>
