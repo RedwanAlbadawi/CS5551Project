@@ -1,0 +1,91 @@
+<body>
+
+<button type="button" mat-raised-button (click)="fileInput.click()">Choose File</button>
+<input hidden (change)="onFileSelected()" #fileInput type="file" id="file">
+
+<div class="button-row">
+  <a mat-raised-button color="primary" [routerLink]="['/modeldb']"><mat-icon>list</mat-icon></a>
+</div>
+<form [formGroup]="experimentForm" (ngSubmit)="onFormSubmit(experimentForm.value)">
+  <mat-form-field appearance="legacy">
+    <input matInput placeholder="model_name" formControlName="model_name"
+           [errorStateMatcher]="matcher">
+    <mat-error>
+      <span *ngIf="!experimentForm.get('model_name').valid && experimentForm.get('model_name').touched">Please enter model_name</span>
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field appearance="legacy">
+    <input matInput placeholder="framework" formControlName="framework"
+           [errorStateMatcher]="matcher">
+    <mat-error>
+      <span *ngIf="!experimentForm.get('framework').valid && experimentForm.get('framework').touched">Please enter framework</span>
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field appearance="legacy">
+    <input matInput placeholder="size" formControlName="size"
+           [errorStateMatcher]="matcher">
+    <mat-error>
+      <span *ngIf="!experimentForm.get('size').valid && experimentForm.get('size').touched">Please enter size</span>
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field appearance="legacy">
+    <input matInput placeholder="epochs" formControlName="epochs"
+              [errorStateMatcher]="matcher">
+    <mat-error>
+      <span *ngIf="!experimentForm.get('epochs').valid && experimentForm.get('epochs').touched">Please enter epochs</span>
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field appearance="legacy">
+    <input matInput placeholder="layersCount" formControlName="layersCount"
+           [errorStateMatcher]="layersCount">
+    <mat-error>
+      <span *ngIf="!experimentForm.get('layersCount').valid && experimentForm.get('layersCount').touched">Please enter layersCount</span>
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field appearance="legacy">
+    <input matInput placeholder="InputTensors" formControlName="InputTensors"
+           [errorStateMatcher]="matcher">
+    <mat-error>
+      <span *ngIf="!experimentForm.get('InputTensors').valid && experimentForm.get('InputTensors').touched">Please enter InputTensors</span>
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field appearance="legacy">
+    <input matInput placeholder="OutputTensor" formControlName="OutputTensor"
+           [errorStateMatcher]="matcher">
+    <mat-error>
+      <span *ngIf="!experimentForm.get('OutputTensor').valid && experimentForm.get('OutputTensor').touched">Please enter OutputTensor</span>
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field appearance="legacy">
+    <input matInput placeholder="Optimizer" formControlName="Optimizer"
+           [errorStateMatcher]="matcher">
+    <mat-error>
+      <span *ngIf="!experimentForm.get('Optimizer').valid && experimentForm.get('Optimizer').touched">Please enter Optimizer</span>
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field appearance="legacy">
+    <input matInput placeholder="LossFunction" formControlName="LossFunction"
+           [errorStateMatcher]="matcher">
+    <mat-error>
+      <span *ngIf="!experimentForm.get('LossFunction').valid && experimentForm.get('LossFunction').touched">Please enter LossFunction</span>
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field appearance="legacy">
+    <input matInput placeholder="AccuracyValue" formControlName="AccuracyValue"
+           [errorStateMatcher]="matcher">
+    <mat-error>
+      <span *ngIf="!experimentForm.get('AccuracyValue').valid && experimentForm.get('AccuracyValue').touched">Please enter AccuracyValue</span>
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field appearance="legacy">
+    <input matInput placeholder="LossValue" formControlName="LossValue"
+           [errorStateMatcher]="matcher">
+    <mat-error>
+      <span *ngIf="!experimentForm.get('LossValue').valid && experimentForm.get('LossValue').touched">Please enter LossValue</span>
+    </mat-error>
+  </mat-form-field>
+  <div class="button-row">
+    <button type="submit" [disabled]="!experimentForm.valid" mat-raised-button color="primary"><mat-icon>save</mat-icon></button>
+  </div>
+</form>
+</body>

@@ -2,6 +2,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { ModeldbComponent } from './modeldb/modeldb.component';
+import { ModeldbUploadComponent } from './modeldb-upload/modeldb-upload.component';
+import { ModeldbDetailComponent } from './modeldb-detail/modeldb-detail.component';
 import {AuthGuard} from './auth/auth.guard';
 
 const routes: Routes = [
@@ -21,6 +23,16 @@ const routes: Routes = [
   {
     path: 'modeldb',
     component: ModeldbComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'modeldb/upload',
+    component: ModeldbUploadComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'modeldb/details/:id',
+    component: ModeldbDetailComponent,
     canActivate: [AuthGuard]
   }
 ];

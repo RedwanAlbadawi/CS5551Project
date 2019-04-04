@@ -1,23 +1,23 @@
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
-var favicon = require('serve-favicon');
-var logger = require('morgan');
+let createError = require('http-errors');
+let express = require('express');
+let path = require('path');
+let logger = require('morgan');
 
-var mongoose = require('mongoose');
+let mongoose = require('mongoose');
 mongoose.connect('mongodb+srv://modelkb:modelkb@modelkb-0dva5.gcp.mongodb.net/ModelKB?retryWrites=true')
   .then(() => console.log('connection successful'))
   .catch((err) => console.error(err));
 
-var apiRouter = require('./routes/experiment');
+let apiRouter = require('./routes/experiment');
 
-var app = express();
+let app = express();
 
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'dist/ModelKBDB')));
-app.use('/', express.static(path.join(__dirname, 'dist/ModelKBDB')));
+app.use('/modeldb/details/:id', express.static(path.join(__dirname, 'dist/ModelKBDB')));
+app.use('/modeldb/upload', express.static(path.join(__dirname, 'dist/ModelKBDB')));
 app.use('/api', apiRouter);
 
 // catch 404 and forward to error handler

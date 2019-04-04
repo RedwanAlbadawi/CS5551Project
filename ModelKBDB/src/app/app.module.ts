@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule, ReactiveFormsModule  } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuth } from 'angularfire2/auth';
@@ -25,7 +25,10 @@ import {
   MatButtonModule,
   MatCardModule,
   MatFormFieldModule } from '@angular/material';
+
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ModeldbUploadComponent } from './modeldb-upload/modeldb-upload.component';
+import { ModeldbDetailComponent } from './modeldb-detail/modeldb-detail.component';
 
 // Initialize Firebase
 const firebaseConfig = {
@@ -43,7 +46,9 @@ const firebaseConfig = {
     LoginComponent,
     RegisterComponent,
     ModeldbComponent,
-    HeaderComponent
+    HeaderComponent,
+    ModeldbUploadComponent,
+    ModeldbDetailComponent
   ],
   imports: [
     BrowserModule,
@@ -60,6 +65,7 @@ const firebaseConfig = {
     MatButtonModule,
     MatCardModule,
     MatFormFieldModule,
+    ReactiveFormsModule,
     AngularFireModule.initializeApp(firebaseConfig),
     BrowserAnimationsModule,
   ],
