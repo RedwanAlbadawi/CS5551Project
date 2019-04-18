@@ -1,7 +1,7 @@
 <body>
 
 <button type="button" mat-raised-button (click)="fileInput.click()">Choose File</button>
-<input hidden (change)="onFileSelected()" #fileInput type="file" id="file">
+<input hidden (change)="onFileSelected($event)" #fileInput type="file" id="file" multiple>
 
 <div class="button-row">
   <a mat-raised-button color="primary" [routerLink]="['/modeldb']"><mat-icon>list</mat-icon></a>

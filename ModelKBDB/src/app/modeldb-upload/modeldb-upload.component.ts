@@ -51,7 +51,9 @@ export class ModeldbUploadComponent implements OnInit {
       });
   }
 
-  onFileSelected() {
-    console.log('placeholder');
-  }
+    onFileSelected(event) {
+      for (let i = 0; i < event.target.files.length; i++) {
+        console.log(event.target.files[i]);
+      }
+    }
 }
