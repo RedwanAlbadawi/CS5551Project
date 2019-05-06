@@ -1,6 +1,14 @@
 <div class="button-row">
   <a mat-raised-button color="primary" [routerLink]="['/modeldb']"><mat-icon>list</mat-icon></a>
 </div>
+<div class="row">
+  <div class="col-sm-8">
+    <label for="searchByName">Search by model-name:</label>
+    <input class="form-control" type="text" placeholder="Model Name" [(ngModel)]="searchCriteria" [ngModelOptions]="{standalone: true}"/>
+    <button class="btn btn-default" (click)="getExperimentsearch(id)">Search</button>
+    <button class="btn btn-default" (click)="clearSearch()">Clear</button>
+  </div>
+</div>
 <mat-card class="example-card">
   <mat-card-header>
     <mat-card-title><h2>{{experiment.model_name}}</h2></mat-card-title>

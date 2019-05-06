@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation  } from '@angular/core';
 import { ApiService } from '../api.service';
 import { DataSource } from '@angular/cdk/collections';
 import { Observable } from 'rxjs';
@@ -14,9 +14,11 @@ export class ModeldbComponent implements OnInit {
   displayedColumns = ['model_name', 'InputTensors', 'OutputTensor', 'Optimizer', 'AccuracyValue'];
   dataSource = new ExperimentDataSource(this.api);
 
+
   constructor(private api: ApiService) { }
 
   ngOnInit() {
+
     this.api.getExperiments()
       .subscribe(res => {
         console.log(res);

@@ -15,6 +15,7 @@ import { HeaderComponent } from './header/header.component';
 import {AuthService} from './auth/auth.service';
 import {AuthGuard} from './auth/auth.guard';
 
+
 import {
   MatInputModule,
   MatPaginatorModule,
@@ -68,6 +69,7 @@ const firebaseConfig = {
     ReactiveFormsModule,
     AngularFireModule.initializeApp(firebaseConfig),
     BrowserAnimationsModule,
+
   ],
   providers: [
     AngularFireAuth,
