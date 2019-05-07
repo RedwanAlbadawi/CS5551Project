@@ -23,8 +23,8 @@ app.use('/api', apiRouter);
 
 
 //search part:
-let router = express.Router();
-router.get('/modeldb-detail', function(req, res, next) {
+//let router = express.Router();
+app.get('/modeldb-detail', function(req, res, next) {
   let searchQuery = {};
 
   if(req.query.name)
