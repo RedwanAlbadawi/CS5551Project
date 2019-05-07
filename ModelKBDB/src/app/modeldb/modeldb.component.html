@@ -1,12 +1,17 @@
 <div class="button-row">
   <a mat-raised-button color="secondary" [routerLink]="['/modeldb/upload']"><mat-icon>add</mat-icon></a>
 </div>
+
+
+<mat-form-field>
+  <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Model Number">
+</mat-form-field>
+
 <div class="example-container mat-elevation-z8">
   <table mat-table #table [dataSource]="dataSource">
 
     <!--- Note that these columns can be defined in any order.
           The actual rendered columns are set as a property on the row definition" -->
-
 
 
 
