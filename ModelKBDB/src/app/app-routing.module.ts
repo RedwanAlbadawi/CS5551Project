@@ -4,6 +4,8 @@ import { RegisterComponent } from './register/register.component';
 import { ModeldbComponent } from './modeldb/modeldb.component';
 import { ModeldbUploadComponent } from './modeldb-upload/modeldb-upload.component';
 import { ModeldbDetailComponent } from './modeldb-detail/modeldb-detail.component';
+import { ChartModule} from './chart/chart.module';
+import { ChartComponent} from './chart/chart.component';
 import {AuthGuard} from './auth/auth.guard';
 
 const routes: Routes = [
@@ -33,6 +35,11 @@ const routes: Routes = [
   {
     path: 'modeldb/details/:id',
     component: ModeldbDetailComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'modeldb/chart',
+    component: ChartComponent,
     canActivate: [AuthGuard]
   }
 ];

@@ -30,6 +30,7 @@ import {
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ModeldbUploadComponent } from './modeldb-upload/modeldb-upload.component';
 import { ModeldbDetailComponent } from './modeldb-detail/modeldb-detail.component';
+import {ChartModule} from './chart/chart.module';
 
 // Initialize Firebase
 const firebaseConfig = {
@@ -49,7 +50,8 @@ const firebaseConfig = {
     ModeldbComponent,
     HeaderComponent,
     ModeldbUploadComponent,
-    ModeldbDetailComponent
+    ModeldbDetailComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -69,7 +71,7 @@ const firebaseConfig = {
     ReactiveFormsModule,
     AngularFireModule.initializeApp(firebaseConfig),
     BrowserAnimationsModule,
-
+    ChartModule,
   ],
   providers: [
     AngularFireAuth,
